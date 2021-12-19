@@ -14,7 +14,10 @@ I have created this sample to explain the end to end process to my peers and fri
 
 - The steps listed below explains how to create a simple API using Lambda, API Gateway and Infrastructure as Code using Terraform.
 
-- If you clone this repository, make sure to change the bucket names. Then run `terraform plan`, `terraform apply` and then once experiment is over, run a `terraform destroy` to make sure that you do not incur any charges.
+- If you clone this repository, make sure to change the bucket names. You can do this by changing `terraform.tfvars` file and updating the bucketname.
+
+- Run `terraform plan`, `terraform apply` and then once experiment is over, run a `terraform destroy` to make sure that you do not incur any charges.
+
 - I have tried to be as intention revealing as possible when it comes to file names. Suggestions always welcome
 
 - There are additional comments available within the source code to explain further.
@@ -115,6 +118,8 @@ To ensure that there are no issues. If you are using Jenkins pipeline, make sure
 # 17: Run `terraform apply --auto-approve`
 
 This will deploy the changes to cloud. To verify that everything works fine , copy the BaseURL from the output and paste it in a browser and append hello to it. (Look at `route_key = "GET /hello" ` inside `apigw-routes.tf`)
+Example: `https://d9whm5dh16.execute-api.us-east-1.amazonaws.com/serverless_lambda_stage/hello`
+Note that the /hello at the end is appended to the base url
 
 # 18: Run `terraform destroy`
 
