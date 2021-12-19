@@ -12,7 +12,9 @@ I have tried to be as intention revealing as possible when it comes to file name
 
 There are additional comments available within the source code to explain further.
 
-# 1 : Define required terraform providers. `providers.tf`
+# 1 : Define required terraform providers.
+
+`providers.tf`
 
 In this example, we will upload the lambda in zip file format to S3 bucket. For creating zip archive, use `hashicorp/archive` provider and `hashicorp/aws` provider.
 
@@ -20,53 +22,81 @@ In this example, we will upload the lambda in zip file format to S3 bucket. For 
 
 Run `terraform init`
 
-# 3: Define an s3 bucket to host lambda function archive. `s3.tf`
+# 3: Define an s3 bucket to host lambda function archive.
+
+`s3.tf`
 
 To store `hellow-world.zip` file
 
-# 4: Define a data block `archive_file` in `data.tf`
+# 4: Define a data block
+
+`archive_file` in `data.tf`
 
 A data block requests that Terraform read from a given data source and export the result under the given local name. The name is used to refer to this resource from elsewhere in the same Terraform module, but has no significance outside of the scope of a module.
 
-# 5: Define an s3 bucket object `s3.tf`
+# 5: Define an s3 bucket object
+
+`s3.tf`
 
 This is the actual zip file. Use the file name `name hello-world.zip` as the key for this object
 
-# 6: Create Lambda execution role. `roles.tf`
+# 6: Create Lambda execution role.
 
-# 7: Attach a policy to the above role `policies.tf`
+`roles.tf`
+
+# 7: Attach a policy to the above role
+
+`policies.tf`
 
 so that lambda can write to cloudwatch.
 
-# 7: Define the lambda `lambda.tf`
+# 7: Define the lambda
+
+`lambda.tf`
 
 Specify the s3 location of the zip file, runtime and handler. The actual lambda code is in teh hello-world folder which is developed in NodeJS.
 
-# 8: Define the CW log group `cloudwatch.tf`
+# 8: Define the CW log group
+
+`cloudwatch.tf`
 
 This file defines the log groups for both lambda and api gateway
 
-# 9: Create API Gateway : `apigw.tf`
+# 9: Create API Gateway
+
+`apigw.tf`
 
 AWS managed service that allows you to create and manage HTTP APIs allowing you to implement an HTTP API using Lambda functions
 
-# 10: Define a state in APIGW `apigw-stages.tf`
+# 10: Define a state in APIGW
+
+`apigw-stages.tf`
 
 This is where you setup stages like Prod, QE, Dev etc.
 
-# 11: Define APIGW - Lambda Integration `apigw-lambda-integration.tf`
+# 11: Define APIGW - Lambda Integration
+
+`apigw-lambda-integration.tf`
 
 In this example, APIGW acts as a proxy to lambda
 
-# 12: Define the route `apigw-route.tf`
+# 12: Define the route
+
+`apigw-route.tf`
 
 This is where we define `GET /hello`
 
-# 13: CW log group for APIGW `cloudwatch.tf`
+# 13: CW log group for APIGW
 
-# 14: Create permission for APIGW to execute lambda `permissions.tf`
+`cloudwatch.tf`
 
-# 15: Define output variables `outputs.tf`
+# 14: Create permission for APIGW to execute lambda
+
+`permissions.tf`
+
+# 15: Define output variables
+
+`outputs.tf`
 
 Define the output variables for s3 bucket, lambda function and most importantly the Base URL from APIGW.
 We will use this URL to invoke the API
