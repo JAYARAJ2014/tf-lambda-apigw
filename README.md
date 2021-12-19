@@ -78,7 +78,7 @@ This is where you setup stages like Prod, QE, Dev etc.
 
 `apigw-lambda-integration.tf`
 
-In this example, APIGW acts as a proxy to lambda
+In this example, APIGW acts as a proxy to lambda. API Gateway passes the request information to your function via the event object. You can use information about the request in your function code.
 
 # 12: Define the route
 
@@ -112,3 +112,15 @@ This will deploy the changes to cloud. To verify that everything works fine , co
 # 18: Run `terraform destroy`
 
 unless you want to pay for the resources living in there for long
+
+# 19: Making Changes
+
+Whenever you modify the code the etag (Computed Hash) in the S3 bucket object changes. This will force Terraform to move updated code to the S3 bucket under the same key.
+Example output from `terraform plan`. Note that the `~` represents an in-place update.
+
+```
+ # aws_s3_bucket_object.lambda_hello_world will be updated in-place
+  ~ resource "aws_s3_bucket_object" "lambda_hello_world" {
+      ~ etag               = "f88e56c820d30e11b04f016426c7e9aa" -> "12590bba4c9c4cd87424cd67e7ca5c4a"
+
+```
