@@ -2,15 +2,22 @@
 
 I have created this sample to explain the end to end process to my peers and friends. This sample is created by reading various sites. For your reading [Click Here](https://learn.hashicorp.com/tutorials/terraform/lambda-api-gateway)
 
-AWS Lambda functions and API gateway are often used to create serverlesss
-applications.
+# Pre Requisites
 
-The steps listed below explains how to create a simple API using Lambda, API Gateway and Infrastructure as Code using Terraform.
+- Basic understanding of aws & servies
+- An access key configured locally on your computer.
 
-NOTE: If you clone this repository, make sure to change the bucket names. Then run `terraform plan`, `terraform apply` and then once experiment is over, run a `terraform destroy` to make sure that you do not incur any charges.
-I have tried to be as intention revealing as possible when it comes to file names. Suggestions always welcome
+# Notes
 
-There are additional comments available within the source code to explain further.
+- AWS Lambda functions and API gateway are often used to create serverlesss
+  applications.
+
+- The steps listed below explains how to create a simple API using Lambda, API Gateway and Infrastructure as Code using Terraform.
+
+- If you clone this repository, make sure to change the bucket names. Then run `terraform plan`, `terraform apply` and then once experiment is over, run a `terraform destroy` to make sure that you do not incur any charges.
+- I have tried to be as intention revealing as possible when it comes to file names. Suggestions always welcome
+
+- There are additional comments available within the source code to explain further.
 
 # 1 : Define required terraform providers.
 
