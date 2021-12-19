@@ -1,6 +1,6 @@
 # Terraform + Lambda functions + API Gateway
 
-I have created this sample to explain the end to end process to my peers and friends. This sample is created by reading learning.harshicorp.com and other sites. For your reading [Click Here](https://learn.hashicorp.com/tutorials/terraform/lambda-api-gateway)
+I have created this sample to explain the end to end process to my peers and friends. This sample is created by reading various sites. For your reading [Click Here](https://learn.hashicorp.com/tutorials/terraform/lambda-api-gateway)
 
 AWS Lambda functions and API gateway are often used to create serverlesss
 applications.
