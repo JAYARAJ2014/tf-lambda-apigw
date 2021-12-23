@@ -136,3 +136,7 @@ Example output from `terraform plan`. Note that the `~` represents an in-place u
       ~ etag               = "f88e56c820d30e11b04f016426c7e9aa" -> "12590bba4c9c4cd87424cd67e7ca5c4a"
 
 ```
+
+# 20: Using S3 bucket as TF State Backend store
+
+Refer `providers.tf` . Backends will help protect tfstate. 

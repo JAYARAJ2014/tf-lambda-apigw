@@ -11,6 +11,11 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket = "aws-jay-tfstate-bucket-001"
+    key    = "tf_key"
+    region = "us-east-1"
+  }
   required_version = "~> 1.0"
 }
 

@@ -11,3 +11,8 @@ variable "lambda_bucket_name" {
   type    = string
   default = "aws-jay-lambda-bucket-20211218001"
 }
+
+variable "tf_bucket" {
+  type    = string
+  default = "aws-jay-tf-state"
+}
