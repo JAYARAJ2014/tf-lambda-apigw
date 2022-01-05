@@ -4,7 +4,7 @@ I have created this sample to explain the end to end process to my peers and fri
 
 # Pre Requisites
 
-- Basic understanding of aws & servies
+- Basic understanding of aws & services
 - An access key configured locally on your computer.
 
 # Notes
@@ -78,7 +78,7 @@ This file defines the log groups for both lambda and api gateway
 
 AWS managed service that allows you to create and manage HTTP APIs allowing you to implement an HTTP API using Lambda functions
 
-# 10: Define a state in APIGW
+# 10: Define a stage in APIGW
 
 `apigw-stages.tf`
 
