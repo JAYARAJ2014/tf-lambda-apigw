@@ -127,7 +127,7 @@ unless you want to pay for the resources living in there for long
 
 # 19: Making Changes
 
-Whenever you modify the code the etag (Computed Hash) in the S3 bucket object changes. This will force Terraform to move updated code to the S3 bucket under the same key.
+Whenever you modify the code the etag (Basically means entity tag.It is a Computed Hash) in the S3 bucket object changes. This will force Terraform to move updated code to the S3 bucket under the same key.
 Example output from `terraform plan`. Note that the `~` represents an in-place update.
 
 ```
