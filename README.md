@@ -1,3 +1,5 @@
+# IaC
+
 # Terraform + Lambda functions + API Gateway
 
 I have created this sample to explain the end to end process to my peers and friends. This sample is created by reading various sites. For your reading [Click Here](https://learn.hashicorp.com/tutorials/terraform/lambda-api-gateway)
@@ -139,4 +141,4 @@ Example output from `terraform plan`. Note that the `~` represents an in-place u
 
 # 20: Using S3 bucket as TF State Backend store
 
-Refer `providers.tf` . Backends will help protect tfstate. 
+Refer `providers.tf` . Backends will help protect tfstate.
